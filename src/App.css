@@ -1,38 +1,101 @@
-.App {
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  width: 100%;
+  height: 3rem;
+  background-color: teal;
+}
+
+.badge{
+  background-color: rgb(255, 255, 0);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
   text-align: center;
+  font-size: small;
+  position: relative;
+  left: 4.4rem;
+  top: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav .btn button{
+  height: 25px;
+  width: 5rem;
+  margin-right: 50px;
+  border-radius: 2px;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal{
+  background-color: rgba(115, 65, 37, 0.557);
+  width: 25rem;
+  position: absolute;
+  left: 35%;
+  top: 5rem;
+  border-radius: 5px;
+  border: 1px solid gray;
+  height: 12rem;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal h2{
+  margin-left: 10px;
+  height: 20px;
+ 
+}
+
+
+.box{
+background-color: rgb(164, 163, 161);
+height: 60%;
+
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.bottom button{
+  width: 30px;
+  margin-left: 10px;
+
+}
+
+.prod{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 15rem;
+
 }
 
-.App-link {
-  color: #61dafb;
+.details{
+  width: 25rem;
+  background-color: cadetblue;
+  padding: 5px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.details div{
+  display: flex;
+  justify-content: space-between;
+  
 }
+
+
+
+
