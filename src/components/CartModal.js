@@ -1,29 +1,43 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartAction } from '../store/cart-slice'
 
 
 const CartModal = () => {
     const cartToggle = useSelector((state) => state.cart.toggleCart)
+    const cartData = useSelector((state)=>state.cart.cartItems)
+    //console.log(cartData)
+    const dispatch = useDispatch()
 
-    
+    const removeQuantity = (id) =>{
+        dispatch(cartAction.decreaseQuantity(id))
+    }
+
+    const addQuantity = (id) => {
+        dispatch(cartAction.increaseQuantity(id))
+    }
+
 return (
 <>
 {cartToggle && 
   <div className='modal'>
   <h2>Cart</h2>
-  <div className='box'>
-      <div className='top'>
-          <h3>Item</h3>
-          <h4>$20.00</h4>
-      </div>
-      <div className='bottom'>
-          <h4>x3</h4>
-         <div >
-         <button>-</button>
-         <button>+</button>
-         </div>
-      </div>
-  </div>
+<ul>
+    {cartData.map((item,index)=>(
+          <li key={item.id}>
+              <img src={item.image} width={40} height={30}/>
+              <p>{item.title}</p>
+              <p>${item.price}</p>
+              <p className='quantity'>x {item.quantity}</p>
+        
+             <div className='bottom'>
+             <button onClick={()=>{removeQuantity(item.id)}}>-</button>
+             <button onClick={()=>{addQuantity(item.id)}}>+</button>
+             </div>
+    
+      </li>
+    ))}
+</ul>
 </div>
 }
 </>

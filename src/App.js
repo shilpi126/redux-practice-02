@@ -9,8 +9,10 @@ function App() {
   return (
     <Provider store={store}>
       <Header/>
-      <CartModal/>
-      <Product/>
+     <div className='main'>
+     <CartModal/>
+     <Product/>
+     </div>
     </Provider >
   );
 }

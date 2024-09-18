@@ -28,15 +28,20 @@
   border: none;
 }
 
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal{
-  background-color: rgba(115, 65, 37, 0.557);
+  background-color: teal;
   width: 25rem;
-  position: absolute;
-  left: 35%;
-  top: 5rem;
+  margin-top: 20px;
   border-radius: 5px;
   border: 1px solid gray;
-  height: 12rem;
+  
 
 }
 
@@ -47,46 +52,61 @@
 }
 
 
-.box{
+.modal ul{
 background-color: rgb(164, 163, 161);
-height: 60%;
 
 }
 
-.top{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
-.bottom{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+.modal ul li{
+   list-style-type: none;
+   height: 3rem;
+   border-bottom: 1px solid black;
+   display: flex;
+   background-color: gray;
+   margin-left: -40px;
+   padding: 5px;
+   justify-content: space-between;
+ 
+  
+  }
+
+  li p{
+    margin-top: 5px;
+    font-size: small;
+    font-weight: bold;
+  }
+
+  .quantity{
+    background-color: white;
+    border: 1px solid black;
+    height: 18px;
+    width: 40px;
+    text-align: center;
+  }
+
+
 
 
 .bottom button{
   width: 30px;
-  margin-left: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
 
 }
 
 .prod{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15rem;
-
+  background-color: rgb(138, 133, 133);
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .details{
   width: 25rem;
-  background-color: cadetblue;
+  background-color: teal;
   padding: 5px;
+  border-radius: 5px;
   
 }
 
