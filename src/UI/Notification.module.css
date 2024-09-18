@@ -1,0 +1,21 @@
+.notification{
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.error{
+    background-color: rgb(232, 10, 6);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.success{
+    background-color: rgb(6, 197, 56);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
