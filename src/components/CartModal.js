@@ -4,9 +4,10 @@ import { cartAction } from '../store/cart-slice'
 
 
 const CartModal = () => {
-    const cartToggle = useSelector((state) => state.cart.toggleCart)
+    const cartToggle = useSelector((state) => state.ui.toggleCart)
     const cartData = useSelector((state)=>state.cart.cartItems)
-    //console.log(cartData)
+    console.log(cartData)
+  
     const dispatch = useDispatch()
 
     const removeQuantity = (id) =>{
@@ -23,7 +24,7 @@ return (
   <div className='modal'>
   <h2>Cart</h2>
 <ul>
-    {cartData.map((item,index)=>(
+    {cartData && cartData.map((item,index)=>(
           <li key={item.id}>
               <img src={item.image} width={40} height={30}/>
               <p>{item.title}</p>

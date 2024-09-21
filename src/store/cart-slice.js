@@ -4,34 +4,42 @@ import {createSlice} from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name:"cart",
     initialState:{
-        toggleCart:false,
+        // toggleCart:false,
         cartItems:[],
         totalQuantity:0,
-        notification:null,
+        // notification:null,
+        changed:false,
 
     },
     reducers:{
-        showNotification(state,action){
+        // showNotification(state,action){
             
-            state.notification={
-                status:action.payload.status,
-                title:action.payload.title,
-                message:action.payload.message,
-            }
+        //     state.notification={
+        //         status:action.payload.status,
+        //         title:action.payload.title,
+        //         message:action.payload.message,
+        //     }
             
 
             
-        }
-        ,
-        showCart (state, action){
-            state.toggleCart= !state.toggleCart;
+        // }
+        // ,
+        // showCart (state, action){
+        //     state.toggleCart= !state.toggleCart;
+        // },
+
+        replaceCart(state, action){
+            const data = action.payload;
+            state.totalQuantity = data.length;
+            state.cartItems = action.payload;
+            
         },
         addToCart (state, action) {
             const item  = action.payload;
-            const existingItem = state.cartItems.find((product)=> product.id === item.id)
+            const existingItem = state.cartItems?.find((product)=> product.id === item.id)
 
             if(!existingItem){
-                state.cartItems.push({
+                state.cartItems?.push({
                     id:item.id,
                     price:item.price,
                     title:item.title,
@@ -39,10 +47,12 @@ const cartSlice = createSlice({
                     quantity:1,
                 });
 
-                state.totalQuantity = state.cartItems.length;
+                state.totalQuantity = state.cartItems?.length;
             }else{
                 existingItem.quantity += 1;
             }
+
+            state.changed=true;
         },
         decreaseQuantity (state, action) {
             const id = action.payload;
@@ -54,6 +64,8 @@ const cartSlice = createSlice({
             state.cartItems = state.cartItems.filter(product => product.id !== id)
             state.totalQuantity = state.cartItems.length;
             }
+
+            state.changed=true;
             
         },
 
